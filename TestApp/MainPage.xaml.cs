@@ -22,9 +22,24 @@ namespace TestApp
     /// </summary>
     public sealed partial class MainPage : Page
     {
+        Visibility cachedVisibility = new Visibility();
         public MainPage()
         {
             this.InitializeComponent();
+        }
+
+        private void PrintButton_Click(object sender, RoutedEventArgs e)
+        {
+            bryansImage.Visibility = bryansImage.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
+            //For Bryan's reference, it does this:
+            //if (bryansImage.Visibility == Visibility.Visible)
+            //{
+            //    bryansImage.Visibility = Visibility.Collapsed;
+            //}
+            //else
+            //{
+            //    bryansImage.Visibility = Visibility.Visible;
+            //}
         }
     }
 }
